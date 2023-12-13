@@ -1,0 +1,9 @@
+bs4
+requests
+python-dotenv
+pymongo[srv]
+tgcrypto
+telegraph==1.4.1
+wget
+youtube-search
+git+https://github.com/masterolic/pyrogram.git
