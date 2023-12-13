@@ -35,4 +35,3 @@ async def start(bot, message):
              ]
         )
         await message.reply_text(f"ʜɪɪ  {message.from_user.mention()}\n\n๏ I ᴀᴍ n Instagram reels/post downloader bot just send me any Instagram post link I will download it for uh !!", reply_markup=Button)
-        await bot.send_message(LOGGER_ID, f"{message.from_user.mention()} __just started the bot ✅__")
