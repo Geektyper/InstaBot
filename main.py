@@ -34,3 +34,7 @@ async def start(bot, message):
              ]
         )
     await message.reply_text(f"ʜɪɪ  {message.from_user.mention()}\n\n๏ I ᴀᴍ n Instagram reels/post downloader bot just send me any Instagram post link I will download it for uh !!", reply_markup=Button)
+
+print(" geek ki gand me rabbit ka lowda 💦💦")
+
+bot.run()
