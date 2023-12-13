@@ -10,7 +10,7 @@ from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup, 
 from pyrogram import filters, Client, errors, enums
 from pyrogram.errors.exceptions.flood_420 import FloodWait
 import bs4, requests, logging 
-from config import API_ID, API_HASH, BOT_TOKEN, OWNER_ID, LOGGER_ID, SUB, MONGO_URI
+from config import API_ID, API_HASH, BOT_TOKEN, OWNER_ID, LOGGER_ID, MONGO_URI
 
 client = MongoClient(MONGO_URI)
 users = client['main']['users']
