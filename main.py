@@ -8,7 +8,6 @@ import wget,os,traceback
 from pymongo import MongoClient
 from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
 from pyrogram import filters, Client, errors, enums
-from pyrogram.errors import UserNotParticipant
 from pyrogram.errors.exceptions.flood_420 import FloodWait
 import bs4, requests, logging 
 from config import API_ID, API_HASH, BOT_TOKEN, OWNER_ID, LOGGER_ID, SUB, MONGO_URI
@@ -24,19 +23,18 @@ bot=Client(name="insta-bot",
             api_hash=API_HASH,
             bot_token=BOT_TOKEN,)
 
-@shiv.on_message(filters.command("start") & filters.incoming)
-async def start(shiv, message):
+@bot.on_message(filters.command("start") & filters.incoming)
+async def start(bot, message):
     try:
-        await shiv.get_chat_member(CHID, message.from_user.id)
+        await bot.get_chat_member(CHID, message.from_user.id)
         add_user(message.from_user.id)
-        await message.reply_text(f"__Hey__ {message.from_user.mention()} !! 🌹\n\n**I am a Telegram bot ❤️**\n__using which you can download Instagram reels. ⚡__\n\n**Extra Features ~ 👾**\n__Using this you can also generate telegraph link of any pic ⚡__ \n\n**Click** /help __for more information about the commands 📒__\n\n**By © @ITZ_RaBBiTX ❤️**")
-        await shiv.send_message(LOG_GROUP, f"{message.from_user.mention()} __just started the bot ✅__")
-    except UserNotParticipant:
-        key = InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton("• ᴄʜᴇᴄᴋ ᴀɢᴀɪɴ •", "chk")
-                ]
-            ]
+        Button = InlineKeyboardMarkup(
+             [
+                 [
+                    InlineKeyboardMarkup("support", url="https://t.me/RoBotXSupport"),
+                    InlineKeyboardMarkup("updates", url="https://t.me/RobotXupdates"),
+                 ]
+             ]
         )
-        await message.reply_text("**⚠️ ᴀᴄᴄᴇꜱꜱ ᴅᴇɴɪᴇᴅ ⚠️**\n\n__ᴩʟᴇᴀꜱᴇ ᴊᴏɪɴ @RaBBiTXUpdates ᴛᴏ ᴜꜱᴇ ᴍᴇ ɪꜰ yᴏᴜ ᴊᴏɪɴᴇᴅ ᴄʟɪᴄᴋ ᴄʜᴇᴄᴋ ᴀɢᴀɪɴ ʙᴜᴛᴛᴏɴ ᴛᴏ confirm__", reply_markup=key)
+        await message.reply_text(f"ʜɪɪ  {message.from_user.mention()}\n\n๏ I ᴀᴍ n Instagram reels/post downloader bot just send me any Instagram post link I will download it for uh !!", reply_markup=Button)
+        await bot.send_message(LOGGER_ID, f"{message.from_user.mention()} __just started the bot ✅__")
