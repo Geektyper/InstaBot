@@ -25,9 +25,8 @@ bot=Client(name="insta-bot",
 
 @bot.on_message(filters.command("start") & filters.incoming)
 async def start(bot, message):
-    try:
-        Button = InlineKeyboardMarkup(
-             [
+    Button = InlineKeyboardMarkup(
+            [
                  [
                     InlineKeyboardMarkup("support", url="https://t.me/RoBotXSupport"),
                     InlineKeyboardMarkup("updates", url="https://t.me/RobotXupdates"),
