@@ -26,8 +26,6 @@ bot=Client(name="insta-bot",
 @bot.on_message(filters.command("start") & filters.incoming)
 async def start(bot, message):
     try:
-        await bot.get_chat_member(CHID, message.from_user.id)
-        add_user(message.from_user.id)
         Button = InlineKeyboardMarkup(
              [
                  [
