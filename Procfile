@@ -1,1 +1,1 @@
-shiva: main.py
+shiva: python3 main.py
